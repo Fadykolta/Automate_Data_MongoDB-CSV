@@ -8,7 +8,7 @@ data = pd.read_csv('data.csv')
 # Convert the DataFrame to a list of dictionaries (each row is a dictionary)
 data_dict = data.to_dict(orient='records')
 
-# Connect to the MongoDB instance in your development environment
+# Connect to the MongoDB instance in your development environment (replace with your MongoDB connection string)
 MONGODB_URI = os.environ.get('MONGODB_URI_DEV')
 client = MongoClient(MONGODB_URI)
 
