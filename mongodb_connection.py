@@ -3,7 +3,7 @@ import os
 from pymongo import MongoClient
 
 # Load data from the CSV file into a pandas DataFrame
-data = pd.read_csv('data.csv')
+data = pd.read_csv('versioned_data.csv')
 
 # Convert the DataFrame to a list of dictionaries (each row is a dictionary)
 data_dict = data.to_dict(orient='records')
@@ -19,7 +19,9 @@ db = client.surveyDB_dev
 collection = db.answers_dev
 
 # Insert each document from the loaded data
-collection.insert_many(data_dict)
+for document in data_dict:
+    # Insert the document into MongoDB
+    collection.insert_one(document)
 
 print("Documents inserted into development environment successfully!")
 

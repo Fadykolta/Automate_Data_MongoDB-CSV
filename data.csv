@@ -1,11 +1,3 @@
-Name,Age,City
-John,28,New York
-Alice,24,Los Angeles
-Bob,32,San Francisco
-Eva,29,Chicago
-Michael,35,Boston
-Sara,27,Miami
-David,41,Dallas
-Sophia,22,Seattle
-Oliver,30,Denver
-Isabella,26,Atlanta
+Version,Name,Age,Location,PreviousVersion
+1,John,30,New York,null
+2,Alice,26,Los Angeles,1

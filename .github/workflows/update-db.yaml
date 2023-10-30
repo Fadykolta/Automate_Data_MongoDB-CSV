@@ -1,4 +1,4 @@
-name: Run MongoDB Script
+name: Run MongoDB Script (with Versioning)
 
 on:
   push:
