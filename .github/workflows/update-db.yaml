@@ -1,31 +1,25 @@
-name: Run Python Script
+name: Run MongoDB Script
 
 on:
   push:
     branches:
       - main
-      - test
 
 jobs:
-  run_script:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v2
       with:
         python-version: 3.8
 
-    - name: Install dependencies
-      run: |
-        python3 -m pip install --upgrade pip
-        pip3 install pymongo
+    - name: Install 'pandas'
+      run: pip install pandas
 
-    - name: Run script
+    - name: Run Python Script
       run: python3 mongodb_connection.py
-      env:
-        MONGODB_URI: ${{ secrets.MONGODB_URI }}
-
