@@ -21,5 +21,8 @@ jobs:
     - name: Install 'pandas'
       run: pip install pandas
 
+    - name: Install 'pymongo'
+      run: pip install pymongo
+
     - name: Run Python Script
       run: python3 mongodb_connection.py
